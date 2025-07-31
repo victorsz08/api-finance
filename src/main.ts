@@ -1,5 +1,9 @@
+import { ApiExpress } from "./infra/api/express/api.express";
+
 export function main() {
-  console.log("server");
+    const app = ApiExpress.build([]);
+
+    app.start(3000);
 }
 
 main();
