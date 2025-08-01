@@ -1,6 +1,6 @@
 import { UserInterface } from "../../domain/interfaces/user.interface";
 
-export const mockUserRepository: UserInterface = {
+export const mockUserRepository: jest.Mocked<UserInterface> = {
     create: jest.fn(),
     delete: jest.fn(),
     find: jest.fn(),

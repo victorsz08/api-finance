@@ -26,7 +26,10 @@ export class CreateUserUsecase
         const emailAlreadyexists = await this.userInterface.findByEmail(email);
 
         if (emailAlreadyexists) {
-            throw new HttpException(HttpStatus.CONFLICT, "Email indisponível");
+            throw new HttpException(
+                HttpStatus.CONFLICT,
+                "Email already exists",
+            );
         }
 
         const aUser = await UserEntity.build(
