@@ -22,7 +22,7 @@ describe("Update User Usecase", () => {
         mockUserRepository.findByEmail.mockResolvedValueOnce(null);
         mockUserRepository.update.mockResolvedValueOnce(undefined);
 
-        const updatedAt = new Date();
+        const updatedAt = expect.any(Date);
 
         await usecase.execute(input);
 
